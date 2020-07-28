@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <title>INDEX SALE</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+<h1>INDEX SALE</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>SlN0</th>
+        <th>SalesmanId</th>
+        <th>ProdId</th>
+        <th>SalesmanName</th>
+        <th>DOS</th>
+    </tr>
+
+    <tr th:if="${lsSale.empty}">
+        <td colspan="2"> No Items Available </td>
+    </tr>
+    <tr th:each="sale : ${lsSale}">
+        <td><span th:text="${sale.id}"> ID </span></td>
+        <td><span th:text="${sale.sino}"> SlN0 </span></td>
+        <td><span th:text="${sale.salesmanid}"> SalesmanId </span></td>
+        <td><span th:text="${sale.prodid}"> ProdId </span></td>
+        <td><span th:text="${sale.salesmanname}"> SalesmanName </span></td>
+        <td><span th:text="${sale.dos}"> DOS </span></td>
+    </tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <title>INDEX PRODUCT</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+<h1>INDEX PRODUCT</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>ProdName</th>
+        <th>Description</th>
+        <th>DateOfManf</th>
+        <th>Price</th>
+    </tr>
+
+    <tr th:if="${lsProduct.empty}">
+        <td colspan="2"> No Items Available </td>
+    </tr>
+    <tr th:each="product : ${lsProduct}">
+        <td><span th:text="${product.id}"> ID </span></td>
+        <td><span th:text="${product.prodname}"> ProdName </span></td>
+        <td><span th:text="${product.description}"> Description </span></td>
+        <td><span th:text="${product.dateofman}"> DateOfManf </span></td>
+        <td><span th:text="${product.price}"> Price </span></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
